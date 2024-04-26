@@ -1,0 +1,26 @@
+#include <iostream>
+#include <vector>
+
+using namespace std;
+int removeElement(vector<int>& nums, int val) {
+    int fast = 0;
+    int low = 0;
+    for(fast = 0; fast < nums.size(); fast++){
+        if(nums[fast] != val){
+            nums[low] = nums[fast];
+            low += 1;
+        }
+    }
+    return low;
+
+}
+
+int main() {
+    vector<int> nums = {3, 2, 2, 3};
+    int val = 3;
+    
+    int index = removeElement(nums, val);
+    cout << "array length after remove target element: " << index << endl;
+    
+    return 0;
+}
